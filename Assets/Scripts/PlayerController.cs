@@ -5,15 +5,19 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
-         [HideInInspector]
+    [HideInInspector]
     public Rigidbody2D rigidBody;
-      [HideInInspector]
+    [HideInInspector]
     public Animator animator;
     public float moveSpeed;
     Vector2 moveDir = new Vector2();
     Vector2 lastMoveDir;
+
+    //[HideInInspector]
+    public string areaTransitionName;
     private Vector3 boundary1;
     private Vector3 boundary2;
+    public bool canMove = true;
     //Make instance of this script to be able reference from other scripts!
     public static PlayerController instance;
       void Awake()
@@ -31,6 +35,8 @@ public class PlayerController : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        areaTransitionName = "";
+        DontDestroyOnLoad(gameObject);
     }
     // Start is called before the first frame update
     void Start()
@@ -56,7 +62,13 @@ public class PlayerController : MonoBehaviour
 
         moveDir.Normalize();
 
-         bool isIdle = moveDir.x == 0 && moveDir.y == 0;
+        bool isIdle = moveDir.x == 0 && moveDir.y == 0;
+
+        if (!canMove)
+        {
+        isIdle = true;
+        }
+
  if (isIdle){
     rigidBody.velocity = Vector2.zero;
     animator.SetBool("isWalking", false);
