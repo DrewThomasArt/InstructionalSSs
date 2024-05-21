@@ -45,7 +45,8 @@ public class CameraController : MonoBehaviour
 
     //keep the camera inside the bounds
     transform.position = new Vector3(Mathf.Clamp(transform.position.x, boundary1.x, boundary2.x), Mathf.Clamp(transform.position.y, boundary1.y, boundary2.y), transform.position.z);
-   
+   if (!GameManager.instance.cutSceneMusicActive)
+   {
         if(!musicStarted)
         {
             musicStarted = true;
@@ -56,5 +57,6 @@ public class CameraController : MonoBehaviour
         {
             musicStarted = false;
         }
+   }
     }
 }

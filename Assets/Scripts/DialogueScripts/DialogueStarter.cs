@@ -11,7 +11,7 @@ public class DialogueStarter : MonoBehaviour
     public Dialogue dialogue;
     //Check wheather the player is in range to talk to npc
     private bool canActivate;
-[Header("Activation")]
+    [Header("Activation")]
     //For different activation methods
     [Tooltip("Activates the dialog as soon as this script is activated. Keep in mind that the player character still has to be in the trigger zone")]
     public bool activateOnAwake;
@@ -24,10 +24,26 @@ public class DialogueStarter : MonoBehaviour
     [Tooltip("Enter the duration of the delay in seconds")]
     public float waitTime;
 
-[Header("NPC Settings")]
+    [Header("NPC Settings")]
     //Check if the player talks to a person for displaying a name tag
     [Tooltip("Display a name tag")]
     public bool displayName = true;
+
+    [Header("Quest Settings")]
+    //For completing quests after dialog
+    [Tooltip("Enter the quest that should be completed. This quest has to be registered in the Quest Manager")]
+    public string questToMark;
+    [Tooltip("Mark a quest as complete after the dialogue")]
+    public bool markComplete;
+
+[Header("Event Settings")]
+    //For completing quests after dialog
+    //public bool shouldActivateQuest;
+    [Tooltip("Enter the event that should be completed. This quest has to be registered in the Event Manager")]
+    public string eventToMark;
+    [Tooltip("Mark an event as complete after the dialogue")]
+    public bool markEventComplete;
+
     public UnityEvent onCanActivate;
     public UnityEvent onDialogueStart;
 
@@ -59,7 +75,15 @@ public class DialogueStarter : MonoBehaviour
                         activateOnAwake = false;
 
                         DialogueManager.instance.ShowDialogueAuto(dialogue.portraits, dialogue.lines, displayName);
-                        DialogueManager.instance.dialogueStarter = this;  
+                        DialogueManager.instance.dialogueStarter = this;
+                        if (markComplete)
+                        {
+                        DialogueManager.instance.ShouldActivateQuestAtEnd(questToMark, markComplete);
+                        }
+                        if (markEventComplete)
+                        {
+                        DialogueManager.instance.ActivateEventAtEnd(eventToMark, markEventComplete);
+                        }
                     }
                 }
             }
@@ -88,6 +112,14 @@ public class DialogueStarter : MonoBehaviour
 
                     DialogueManager.instance.ShowDialogue(dialogue.portraits, dialogue.lines, displayName);
                     DialogueManager.instance.dialogueStarter = this;
+                        if (markComplete)
+                        {
+                        DialogueManager.instance.ShouldActivateQuestAtEnd(questToMark, markComplete);
+                        }
+                        if (markEventComplete)
+                        {
+                            DialogueManager.instance.ActivateEventAtEnd(eventToMark, markEventComplete);
+                        }
                     }
                 }
             }

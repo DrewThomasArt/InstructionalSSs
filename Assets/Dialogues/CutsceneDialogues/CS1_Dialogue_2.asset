@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88db921c8f12314896a29ff7080e2b9, type: 3}
+  m_Name: CS1_Dialogue_2
+  m_EditorClassIdentifier: 
+  portraits:
+  - {fileID: 21300000, guid: 28eb165375f6f024281961b4b0463a2a, type: 3}
+  - {fileID: 21300000, guid: 3acb9a9292738894492dd062032af9e0, type: 3}
+  - {fileID: 21300000, guid: 63dde5e01ce8abc48a55e0d2f6e9586e, type: 3}
+  - {fileID: 21300000, guid: 205a9a4fc047bb342aec22458442adcc, type: 3}
+  - {fileID: 21300000, guid: bd4d208a23cfc50498e679991d26e345, type: 3}
+  - {fileID: 21300000, guid: 32ef75b937807ad4c82aeebfeb74e1d8, type: 3}
+  - {fileID: 21300000, guid: d9fd3ddf62afc9a4cbca02aee46e0fba, type: 3}
+  - {fileID: 21300000, guid: 435786ab9bd24794382c78dc86a04a38, type: 3}
+  - {fileID: 21300000, guid: 0fe410731898f28449d49b3027e3ca33, type: 3}
+  lines:
+  - //Boe Greenwood
+  - '**0'
+  - Isn't it Sable's turn?
+  - //Eagle Eye
+  - '**4'
+  - I'm pretty sure it's Sable's turn.
+  - //Hope
+  - '**6'
+  - It's Sable's turn!
+  - //Sheriff Brahm
+  - '**0'
+  - Very well. Sable will handle the decorations!
+  - I'm sure they can be found in a chest somewhere in this village.
+  closingMessage: []

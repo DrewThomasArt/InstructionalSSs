@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88db921c8f12314896a29ff7080e2b9, type: 3}
+  m_Name: CS1_Dialogue_3
+  m_EditorClassIdentifier: 
+  portraits:
+  - {fileID: 21300000, guid: 28eb165375f6f024281961b4b0463a2a, type: 3}
+  - {fileID: 21300000, guid: 3acb9a9292738894492dd062032af9e0, type: 3}
+  - {fileID: 21300000, guid: 63dde5e01ce8abc48a55e0d2f6e9586e, type: 3}
+  - {fileID: 21300000, guid: d9fd3ddf62afc9a4cbca02aee46e0fba, type: 3}
+  - {fileID: 21300000, guid: 435786ab9bd24794382c78dc86a04a38, type: 3}
+  - {fileID: 21300000, guid: 0fe410731898f28449d49b3027e3ca33, type: 3}
+  lines:
+  - //Hope
+  - '**4'
+  - Yay! I know my big brother will do a great job!
+  - //Sheriff Brahm
+  - '**0'
+  - Well, that's all folks. Let's get back to our daily duties, ok?
+  - Also, Sable. Can you stay and come talk to me privately for a moment? There are
+    some plans I have to go over with you.
+  closingMessage: []

@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public bool gameMenuOpen;
     public bool dialogueActive;
     public bool fadingBetweenAreas;
+    public bool eventLockActive;
+    public bool cutSceneMusicActive;
 
     [Header("Character Bools")]
     //For checking if the player can move
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
          //Check if any meu is currently open and prevent the player from moving
-        if (gameMenuOpen || dialogueActive || fadingBetweenAreas)
+        if (gameMenuOpen || dialogueActive || fadingBetweenAreas || eventLockActive)
         {
             PlayerController.instance.canMove = false;
             confirmCanMove = PlayerController.instance.canMove;

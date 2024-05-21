@@ -38,11 +38,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Hidden Player
+    uniqueID: 2263863197
+    locked: 0
   - name: Background
     uniqueID: 3030273335
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: NPCs
+    uniqueID: 2995674357
     locked: 0
   - name: Player
     uniqueID: 4268289335

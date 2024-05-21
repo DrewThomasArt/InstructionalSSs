@@ -9,4 +9,6 @@ public class Dialogue : ScriptableObject
     public Sprite[] portraits;
     [Tooltip("The lines the npcs say when the player talks to them")]
     public string[] lines;
+    [Tooltip("Inn and shop keepers will say these lines after closing their menus")]
+    public string[] closingMessage;
 }

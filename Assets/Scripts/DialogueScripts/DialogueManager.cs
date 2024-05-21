@@ -30,6 +30,14 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueObject;
     [HideInInspector]
     public bool dontOpenDialogueAgain;
+
+    [Header("Dialogue Type")]
+    private string questToMark;
+    private bool markQuestComplete;
+    private bool shouldMarkQuest;
+    private string eventToMark;
+    private bool markEventComplete1;
+    private bool shouldMarkEvent;
     public GameObject NPC;
 
     // Start is called before the first frame update
@@ -59,6 +67,34 @@ public class DialogueManager : MonoBehaviour
                         {
                         dialogueBox.SetActive(false);
                         GameManager.instance.dialogueActive = false;
+
+                            // //Marks quest complete
+                            // if (shouldMarkQuest)
+                            // {
+                            //     shouldMarkQuest = false;
+                            //     if (markQuestComplete)
+                            //     {
+                            //         QuestManager.instance.MarkQuestComplete(questToMark);
+                            //     }
+                            //     else
+                            //     {
+                            //         QuestManager.instance.MarkQuestIncomplete(questToMark);
+                            //     }
+                            // }
+
+                            //Marks event complete
+                            if (shouldMarkEvent)
+                            {
+                                shouldMarkEvent = false;
+                                if (markEventComplete1)
+                                {
+                                    EventManager.instance.MarkEventComplete(eventToMark);
+                                }
+                                else
+                                {
+                                    EventManager.instance.MarkEventIncomplete(eventToMark);
+                                }
+                            }
                         }
                     else
                     {
@@ -164,7 +200,22 @@ public void ShowDialogue(Sprite[] portraits, string[] newLines, bool displayName
                 }
 
             }
-        }
-        
+        } 
+    }
+
+    //Method to complete a quest after dialogue
+    public void ShouldActivateQuestAtEnd(string questName, bool markComplete)
+    {
+        questToMark = questName;
+        markQuestComplete = markComplete;
+        shouldMarkQuest = true;
+    }
+
+    //Method to complete an event after dialogue
+    public void ActivateEventAtEnd(string eventName, bool markEventComplete)
+    {
+        eventToMark = eventName;
+        markEventComplete1 = markEventComplete;
+        shouldMarkEvent = true;
     }
 }

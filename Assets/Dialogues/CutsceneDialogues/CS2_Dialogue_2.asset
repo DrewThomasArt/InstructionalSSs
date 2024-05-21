@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88db921c8f12314896a29ff7080e2b9, type: 3}
+  m_Name: CS2_Dialogue_2
+  m_EditorClassIdentifier: 
+  portraits:
+  - {fileID: 21300000, guid: 28eb165375f6f024281961b4b0463a2a, type: 3}
+  - {fileID: 21300000, guid: 3acb9a9292738894492dd062032af9e0, type: 3}
+  - {fileID: 21300000, guid: 63dde5e01ce8abc48a55e0d2f6e9586e, type: 3}
+  - {fileID: 21300000, guid: d9fd3ddf62afc9a4cbca02aee46e0fba, type: 3}
+  - {fileID: 21300000, guid: 435786ab9bd24794382c78dc86a04a38, type: 3}
+  - {fileID: 21300000, guid: 0fe410731898f28449d49b3027e3ca33, type: 3}
+  lines:
+  - //Sable
+  - '**0'
+  - We're in the Elmridge Forests. Why'd you take me out here, Sheriff?
+  - //Sheriff Brahm
+  - '**0'
+  - I'm sure you've noticed it before, Sable.
+  - The weather. It's been very strange lately. Over here, it's snowing, but over
+    there--it's as warm as Spring.
+  - It's almost as if two completely different seasons are happening simultaneously.
+  - //Sable
+  - '**0'
+  - I have noticed that... it's been like this for a few weeks now. I never knew
+    what to make of it.
+  - //Sheriff Brahm
+  - '**0'
+  - Yes... I wasn't sure at first, but a phenomenon like this is certainly can not
+    be explained by the laws of nature.
+  - I fear that something beyond our knowledge may be happening--something that could
+    lead to the destruction of everything.
+  - //Sable
+  - '**0'
+  - What are you talking about?
+  - //Sheriff Brahm
+  - '**0'
+  - There's an old prophecy that has been told in children's stories amongst goblins--you're
+    probably too old to remember.
+  - But it warns of us the day when the balance of the seasons are upset... it means
+    the four dieties are at war.
+  - When they're at war, the seasons could last for years--or just a couple of days.
+    They could even never happen at all, or all at once. it all depends on the state
+    of the dieties.
+  - With the balance in shambles... our environment will collapse, and the world
+    will fall to pieces soon enough.
+  - But our prophecy declares there will be a hero... a goblin born that has the
+    gift of uniting creatures of all races and ethnicities.
+  - A goblin that will erase the scars between enemies and lead this continent to
+    a solution.
+  - //Sable
+  - '**0'
+  - ...I don't know what any of this means.
+  - //Sheriff Brahm
+  - '**0'
+  - Neither do I. The prophecy mentions nothing about how to save this continent...
+  - But there's one thing I'm sure of, Sable...
+  closingMessage: []

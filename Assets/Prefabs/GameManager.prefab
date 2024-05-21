@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5868459565891784341}
   - component: {fileID: 3142916058038793259}
+  - component: {fileID: -6551471555989343677}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,6 +45,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6687c934175afd64196969047fded6eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutSceneActive: 0
   gameMenuOpen: 0
   dialogueActive: 0
+  fadingBetweenAreas: 0
+  eventLockActive: 0
+  cutSceneMusicActive: 0
   confirmCanMove: 0
+--- !u!114 &-6551471555989343677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608024861997098261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1afbfc3d0bee4248b4c8263d170c826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - -------------------------
+  - Sheriff Asks Question
+  - Sable is Chosen for Decorations Duty
+  - Town Meeting Ends
+  - Opening Event Ends
+  - Walked to the Sheriff
+  - The Prophecy Intro Fade Completed
+  - Talked to the Sheriff
+  - Arrived at the Forest
+  - Explained the Prophecy
+  - Told Sable His Fate
+  - Fade Back to Elmridge
+  - The Prophecy Event Ended
+  completedEvents: 
