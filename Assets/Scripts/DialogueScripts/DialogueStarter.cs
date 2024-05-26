@@ -29,6 +29,20 @@ public class DialogueStarter : MonoBehaviour
     [Tooltip("Display a name tag")]
     public bool displayName = true;
 
+    [Header("Receive Settings")]
+    [Tooltip("Receive an item after conversation")]
+    public bool receiveItem;    
+    [Tooltip("Drag and drop an item prefab")]
+    public Item itemToReceive;
+    [Tooltip("Give an item after conversation")]
+    public bool giveItem;
+    [Tooltip("Drag and drop an item prefab")]
+    public Item itemToGive;
+    [Tooltip("Receive gold after conversation")]
+    public bool receiveGold;
+    [Tooltip("The amount of gold received")]
+    public int goldAmount;
+
     [Header("Quest Settings")]
     //For completing quests after dialog
     [Tooltip("Enter the quest that should be completed. This quest has to be registered in the Quest Manager")]
@@ -36,7 +50,7 @@ public class DialogueStarter : MonoBehaviour
     [Tooltip("Mark a quest as complete after the dialogue")]
     public bool markComplete;
 
-[Header("Event Settings")]
+    [Header("Event Settings")]
     //For completing quests after dialog
     //public bool shouldActivateQuest;
     [Tooltip("Enter the event that should be completed. This quest has to be registered in the Event Manager")]
@@ -109,7 +123,6 @@ public class DialogueStarter : MonoBehaviour
                     else
                     {
                     activateOnAwake = false;
-
                     DialogueManager.instance.ShowDialogue(dialogue.portraits, dialogue.lines, displayName);
                     DialogueManager.instance.dialogueStarter = this;
                         if (markComplete)
@@ -119,6 +132,27 @@ public class DialogueStarter : MonoBehaviour
                         if (markEventComplete)
                         {
                             DialogueManager.instance.ActivateEventAtEnd(eventToMark, markEventComplete);
+                        }
+
+                        if (giveItem)
+                        {
+                            Shop.instance.selectedItem = itemToGive;
+                            DialogueManager.instance.itemGiven = true;
+
+                            for (int i = 0; i < GameManager.instance.itemsHeld.Length; i++)
+                            {
+                                if (GameManager.instance.itemsHeld[i] == itemToGive.name)
+                                {
+                                    GameManager.instance.itemsHeld[i] = "";
+                                    giveItem = false;
+                                }
+
+                                if (GameManager.instance.equipItemsHeld[i] == itemToGive.name)
+                                {
+                                    GameManager.instance.equipItemsHeld[i] = "";
+                                    giveItem = false;
+                                }
+                            }
                         }
                     }
                 }

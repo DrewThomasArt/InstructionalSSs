@@ -27,6 +27,9 @@ public class DialogueManager : MonoBehaviour
     public string[] dialogueLines;
     public int currentLine;
     public bool justStarted;
+    public bool fullInventory;
+    public bool itemRecieved;
+    public bool itemGiven;
     public GameObject dialogueObject;
     [HideInInspector]
     public bool dontOpenDialogueAgain;
@@ -66,21 +69,43 @@ public class DialogueManager : MonoBehaviour
                     if (currentLine >= dialogueLines.Length)
                         {
                         dialogueBox.SetActive(false);
+
+                        if (itemRecieved && !fullInventory)
+                            {
+                                GameMenu.instance.gotItemMessageText.text = "You found a " + Shop.instance.selectedItem.name + "!";
+                                StartCoroutine(gotItemMessageCo());
+                                itemRecieved = false;
+                            }
+
+                        if (itemGiven)
+                            {
+                                GameMenu.instance.gotItemMessageText.text = "You gave " + Shop.instance.selectedItem.name + "!";
+                                StartCoroutine(gotItemMessageCo());
+                                itemGiven = false;
+                            }
+
+                        if (fullInventory)
+                            {
+                                GameMenu.instance.gotItemMessageText.text = "You found a " + Shop.instance.selectedItem.name + "." + "\n" + "But your equipment bag is full!";
+                                StartCoroutine(gotItemMessageCo());
+                                fullInventory = false;
+                            }
+
                         GameManager.instance.dialogueActive = false;
 
                             // //Marks quest complete
-                            // if (shouldMarkQuest)
-                            // {
-                            //     shouldMarkQuest = false;
-                            //     if (markQuestComplete)
-                            //     {
-                            //         QuestManager.instance.MarkQuestComplete(questToMark);
-                            //     }
-                            //     else
-                            //     {
-                            //         QuestManager.instance.MarkQuestIncomplete(questToMark);
-                            //     }
-                            // }
+                            if (shouldMarkQuest)
+                            {
+                                shouldMarkQuest = false;
+                                if (markQuestComplete)
+                                {
+                                    QuestManager.instance.MarkQuestComplete(questToMark);
+                                }
+                                else
+                                {
+                                    QuestManager.instance.MarkQuestIncomplete(questToMark);
+                                }
+                            }
 
                             //Marks event complete
                             if (shouldMarkEvent)
@@ -134,6 +159,57 @@ public void ShowDialogue(Sprite[] portraits, string[] newLines, bool displayName
 
             GameManager.instance.dialogueActive = true;
         }
+
+            if (newLines.Length == 0)
+        {
+            if (itemRecieved && !fullInventory)
+            {
+                GameMenu.instance.gotItemMessageText.text = "You found a " + Shop.instance.selectedItem.name + "!";
+                StartCoroutine(gotItemMessageCo());
+                itemRecieved = false;
+            }
+
+            if (itemGiven)
+            {
+                GameMenu.instance.gotItemMessageText.text = "You gave " + Shop.instance.selectedItem.name + "!";
+                StartCoroutine(gotItemMessageCo());
+                itemGiven = false;
+            }
+
+            if (fullInventory)
+            {
+                GameMenu.instance.gotItemMessageText.text = "You found a " + Shop.instance.selectedItem.name + "." + "\n" + "But your equipment bag is full!";
+                StartCoroutine(gotItemMessageCo());
+                fullInventory = false;
+            }
+
+                if (shouldMarkQuest)
+            {
+                shouldMarkQuest = false;
+                if (markQuestComplete)
+                {
+                    QuestManager.instance.MarkQuestComplete(questToMark);
+                }
+                else
+                {
+                    QuestManager.instance.MarkQuestIncomplete(questToMark);
+                }
+            }
+
+            //Marks event complete
+            if (shouldMarkEvent)
+            {
+                shouldMarkEvent = false;
+                if (markEventComplete1)
+                {
+                    EventManager.instance.MarkEventComplete(eventToMark);
+                }
+                else
+                {
+                    EventManager.instance.MarkEventIncomplete(eventToMark);
+                }
+            }
+        }
     }
 
 //Method to call the dialogue. Needs the lines as string array + bool for 
@@ -158,6 +234,57 @@ public void ShowDialogue(Sprite[] portraits, string[] newLines, bool displayName
             nameBox.SetActive(displayName);
 
             GameManager.instance.dialogueActive = true;
+        }
+
+            if (newLines.Length == 0)
+        {
+            if (itemRecieved && !fullInventory)
+            {
+                GameMenu.instance.gotItemMessageText.text = "You found a " + Shop.instance.selectedItem.name + "!";
+                StartCoroutine(gotItemMessageCo());
+                itemRecieved = false;
+            }
+
+            if (itemGiven)
+            {
+                GameMenu.instance.gotItemMessageText.text = "You gave " + Shop.instance.selectedItem.name + "!";
+                StartCoroutine(gotItemMessageCo());
+                itemGiven = false;
+            }
+
+            if (fullInventory)
+            {
+                GameMenu.instance.gotItemMessageText.text = "You found a " + Shop.instance.selectedItem.name + "." + "\n" + "But your equipment bag is full!";
+                StartCoroutine(gotItemMessageCo());
+                fullInventory = false;
+            }
+
+                if (shouldMarkQuest)
+            {
+                shouldMarkQuest = false;
+                if (markQuestComplete)
+                {
+                    QuestManager.instance.MarkQuestComplete(questToMark);
+                }
+                else
+                {
+                    QuestManager.instance.MarkQuestIncomplete(questToMark);
+                }
+            }
+
+            //Marks event complete
+            if (shouldMarkEvent)
+            {
+                shouldMarkEvent = false;
+                if (markEventComplete1)
+                {
+                    EventManager.instance.MarkEventComplete(eventToMark);
+                }
+                else
+                {
+                    EventManager.instance.MarkEventIncomplete(eventToMark);
+                }
+            }
         }
     }
 
@@ -217,5 +344,13 @@ public void ShowDialogue(Sprite[] portraits, string[] newLines, bool displayName
         eventToMark = eventName;
         markEventComplete1 = markEventComplete;
         shouldMarkEvent = true;
+    }
+
+    public IEnumerator gotItemMessageCo()
+    {
+        yield return new WaitForSeconds(.5f);
+        GameMenu.instance.gotItemMessage.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        GameMenu.instance.gotItemMessage.SetActive(false);
     }
 }

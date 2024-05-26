@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5868459565891784341}
   - component: {fileID: 3142916058038793259}
   - component: {fileID: -6551471555989343677}
+  - component: {fileID: -8333045317956997403}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,10 +49,50 @@ MonoBehaviour:
   cutSceneActive: 0
   gameMenuOpen: 0
   dialogueActive: 0
+  battleActive: 0
   fadingBetweenAreas: 0
   eventLockActive: 0
   cutSceneMusicActive: 0
+  itemCharChoiceMenu: 0
+  itemMenu: 0
+  equipMenu: 0
   confirmCanMove: 0
+  existingItems:
+  - {fileID: 6744668508428889374, guid: d5b1fb977d4ab2349a677d6710b8cade, type: 3}
+  - {fileID: 6744668508428889374, guid: a0278a6f1f2a3304fa013483176393ad, type: 3}
+  - {fileID: 6744668508428889374, guid: bf1f4bcec9a2a9e46bbd6df0ecb5da91, type: 3}
+  itemsInInventory:
+  - {fileID: 6744668508428889374, guid: d5b1fb977d4ab2349a677d6710b8cade, type: 3}
+  - {fileID: 6744668508428889374, guid: a0278a6f1f2a3304fa013483176393ad, type: 3}
+  - {fileID: 6744668508428889374, guid: bf1f4bcec9a2a9e46bbd6df0ecb5da91, type: 3}
+  itemsHeld:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  equipmentInInventory: []
+  equipItemsHeld:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  currentGold: 1500
 --- !u!114 &-6551471555989343677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,4 +119,25 @@ MonoBehaviour:
   - Told Sable His Fate
   - Fade Back to Elmridge
   - The Prophecy Event Ended
+  - Notice the brothers' footsteps
+  - Notice more footsteps
+  - Faded back to Elmridge
   completedEvents: 
+--- !u!114 &-8333045317956997403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608024861997098261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4616fcec4e4b924994853207b0312f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests:
+  - --------------------------------------
+  - '"Talk to Garl"'
+  - '"Found the Lost Brothers"'
+  - '"The Lost Brothers"'
+  completedQuests: 
