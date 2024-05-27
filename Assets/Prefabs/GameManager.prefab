@@ -53,7 +53,6 @@ MonoBehaviour:
   fadingBetweenAreas: 0
   eventLockActive: 0
   cutSceneMusicActive: 0
-  itemCharChoiceMenu: 0
   itemMenu: 0
   equipMenu: 0
   confirmCanMove: 0

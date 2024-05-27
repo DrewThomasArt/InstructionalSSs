@@ -8,7 +8,6 @@ using TMPro;
 
 public class GameMenu : MonoBehaviour {
     public static GameMenu instance;
-    Navigation customNav = new Navigation();
 
     [Header("Initialization")]
     //Game objects used by this code
@@ -27,7 +26,7 @@ public class GameMenu : MonoBehaviour {
     public ReadHighlightedButton[] highlightedEquipItemButtons;
     public Button itemMenuItem0;
     public Button equipMenuItem0;
-     public GameObject gold;
+    public GameObject gold;
     public TextMeshProUGUI goldText;
     public GameObject itemWindow;
     public GameObject equipWindow;
@@ -89,7 +88,7 @@ public class GameMenu : MonoBehaviour {
                     SelectFirstButton();
                 }
                     menu.SetActive(true);
-                    //UpdateMainStats();
+                    UpdateMainStats();
                     GameManager.instance.gameMenuOpen = true;
                     menuCooldownComplete = false;
                     StartCoroutine(MenuCooldown());
@@ -111,8 +110,7 @@ public class GameMenu : MonoBehaviour {
                 CloseAllWindows();
 
             }
-        }
-        
+        }        
 	}
 
     public void OpenGameMenu()
@@ -122,15 +120,10 @@ public class GameMenu : MonoBehaviour {
         GameManager.instance.gameMenuOpen = true;
     }
 
-private IEnumerator MenuCooldown()
+    private IEnumerator MenuCooldown()
     {
     yield return new WaitForSeconds(0.2f);
     menuCooldownComplete = true;
-    }
-
-    public void ItemConfirmed(bool callItemConfirmed)
-    {
-    itemConfirmed = callItemConfirmed;   
     }
 
     public void SelectFirstButton()
@@ -146,11 +139,6 @@ private IEnumerator MenuCooldown()
     public void OpenItemWindow()
     {
         buttonValue = 0;
-        //Set button navigation mode to automatic
-        customNav.mode = Navigation.Mode.Automatic;
-
-        useItemButton.interactable = false;
-        discardItemButton.interactable = false;
        
         for (int i = 0; i < itemButtonsB.Length; i++)
         {
@@ -159,12 +147,6 @@ private IEnumerator MenuCooldown()
 
         for (int i = 0; i < itemButtonsB.Length; i++)
         {
-            //Set navigation mode of non-disabled buttons to automatic in order to avoid navigating into disabled buttons
-            if (GameManager.instance.itemsHeld[i] != "")
-            {
-            itemButtonsB[i].navigation = customNav;
-            }
-
             //Make only those item buttons interactable which actually hold items 
             if (GameManager.instance.itemsHeld[i] == "")
             {
@@ -185,6 +167,7 @@ private IEnumerator MenuCooldown()
     {
     //playerStats = GameManager.instance.characterStatus;
     goldText.text = GameManager.instance.currentGold.ToString() + "G";
+    Debug.Log("Updated main stats");
     }
 
     public void CloseMenu()
@@ -218,14 +201,6 @@ private IEnumerator MenuCooldown()
                 if (itemWindow.activeInHierarchy && !useItemButton.interactable)
                 {
                     itemWindow.SetActive(false);
-
-                    //Set disabled buttons back to interactable
-                    // item.interactable = true;
-                    // equip.interactable = true;
-                    // skills.interactable = true;
-                    // status.interactable = true;
-                    // close.interactable = true;
-                    // //quit.interactable = true;
                     btn = item;
                     SelectFirstButton();
                 }
@@ -234,64 +209,8 @@ private IEnumerator MenuCooldown()
                 if (equipWindow.activeInHierarchy && !useEquipItemButton.interactable)
                 {
                     equipWindow.SetActive(false);
-
-                    //Set disabled buttons back to interactable
-                    // item.interactable = true;
-                    // equip.interactable = true;
-                    // skills.interactable = true;
-                    // status.interactable = true;
-                    // close.interactable = true;
-                    // //quit.interactable = true;
                     btn = item;
                     SelectFirstButton();
-                }
-
-                //Close item action buttons
-                if (itemWindow.activeInHierarchy && useItemButton.interactable)
-                {
-                    for (int i = 0; i < itemButtonsB.Length; i++)
-                    {
-                    itemButtonsB[i].interactable = true;
-                    }
-
-                    for (int i = 0; i < itemButtonsB.Length; i++)
-                    {
-                        //Set navigation mode of non-disabled buttons to automatic in order to avoid navigating into disabled buttons
-                        if (GameManager.instance.itemsHeld[i] != "")
-                        {
-                        itemButtonsB[i].navigation = customNav;
-                        }
-
-                        //Make only those item buttons interactable which actually hold items 
-                        if (GameManager.instance.itemsHeld[i] == "")
-                        {
-                        itemButtonsB[i].interactable = false;
-                        }
-                    }
-                }
-
-                //Close equip action buttons
-                if (equipWindow.activeInHierarchy && useEquipItemButton.interactable)
-                {
-                    for (int i = 0; i < equipItemButtonsB.Length; i++)
-                    {
-                    equipItemButtonsB[i].interactable = true;
-                    }
-
-                    for (int i = 0; i < equipItemButtonsB.Length; i++)
-                    {
-                        //Set navigation mode of non-disabled buttons to automatic in order to avoid navigating into disabled buttons
-                        if (GameManager.instance.equipItemsHeld[i] != "")
-                        {
-                        equipItemButtonsB[i].navigation = customNav;
-                        }
-
-                        //Make only those item buttons interactable which actually hold items 
-                        if (GameManager.instance.equipItemsHeld[i] == "")
-                        {
-                        equipItemButtonsB[i].interactable = false;
-                        }
-                    }
                 }
     }
 
@@ -363,59 +282,10 @@ private IEnumerator MenuCooldown()
 
     public void DiscardItem()
     {
-        for (int i = 0; i < itemButtonsB.Length; i++)
-        {
-            itemButtonsB[i].interactable = true;
-        }
-
-        for (int i = 0; i < equipItemButtonsB.Length; i++)
-        {
-            equipItemButtonsB[i].interactable = true;
-        }
-
         buttonValue = 0;
-
-        //Set button navigation mode to automatic
-        customNav.mode = Navigation.Mode.Automatic;
 
         useItemButton.interactable = false;
         discardItemButton.interactable = false;
-        
-        if (itemWindow.activeInHierarchy)
-        {
-            for (int i = 0; i < itemButtonsB.Length; i++)
-            {
-                //Set navigation mode of non-disabled buttons to automatic in order to avoid navigating into disabled buttons
-                if (GameManager.instance.itemsHeld[i] != "")
-                {
-                    itemButtonsB[i].navigation = customNav;
-                }
-
-                //Make only those item buttons interactable which actually hold items 
-                if (GameManager.instance.itemsHeld[i] == "")
-                {
-                    itemButtonsB[i].interactable = false;
-                }
-            }
-        }
-        
-        if (equipWindow.activeInHierarchy)
-        {
-            for (int i = 0; i < equipItemButtonsB.Length; i++)
-            {
-                //Set navigation mode of non-disabled buttons to automatic in order to avoid navigating into disabled buttons
-                if (GameManager.instance.equipItemsHeld[i] != "")
-                {
-                    equipItemButtonsB[i].navigation = customNav;
-                }
-
-                //Make only those item buttons interactable which actually hold items 
-                if (GameManager.instance.equipItemsHeld[i] == "")
-                {
-                    equipItemButtonsB[i].interactable = false;
-                }
-            }
-        }
         
         if (activeItem != null)
         {
@@ -450,11 +320,6 @@ private IEnumerator MenuCooldown()
     public void OpenEquipWindow()
     {
         buttonValue = 0;
-        //Set button navigation mode to automatic
-        customNav.mode = Navigation.Mode.Automatic;
-
-        useEquipItemButton.interactable = false;
-        discardEquipItemButton.interactable = false;
 
         for (int i = 0; i < equipItemButtonsB.Length; i++)
         {
@@ -463,12 +328,6 @@ private IEnumerator MenuCooldown()
 
         for (int i = 0; i < equipItemButtonsB.Length; i++)
         {
-            //Set navigation mode of non-disabled buttons to automatic in order to avoid navigating into disabled buttons
-            if (GameManager.instance.equipItemsHeld[i] != "")
-            {
-            equipItemButtonsB[i].navigation = customNav;
-            }
-
             //Make only those item buttons interactable which actually hold items 
             if (GameManager.instance.equipItemsHeld[i] == "")
             {

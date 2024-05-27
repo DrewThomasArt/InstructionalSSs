@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CS2_Dialogue_4
   m_EditorClassIdentifier: 
   portraits:
-  - {fileID: 21300000, guid: 28eb165375f6f024281961b4b0463a2a, type: 3}
+  - {fileID: 21300000, guid: d32f5c5c25f428548b9ecefe1807917e, type: 3}
   - {fileID: 21300000, guid: 3acb9a9292738894492dd062032af9e0, type: 3}
   - {fileID: 21300000, guid: 63dde5e01ce8abc48a55e0d2f6e9586e, type: 3}
   - {fileID: 21300000, guid: d9fd3ddf62afc9a4cbca02aee46e0fba, type: 3}

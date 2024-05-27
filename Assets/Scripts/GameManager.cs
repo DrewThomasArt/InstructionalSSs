@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public bool fadingBetweenAreas;
     public bool eventLockActive;
     public bool cutSceneMusicActive;
-    public bool itemCharChoiceMenu;
     public bool itemMenu;
     public bool equipMenu;
 

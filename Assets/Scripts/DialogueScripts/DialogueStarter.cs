@@ -98,6 +98,35 @@ public class DialogueStarter : MonoBehaviour
                         {
                         DialogueManager.instance.ActivateEventAtEnd(eventToMark, markEventComplete);
                         }
+
+                        // if (giveItem)
+                        // {
+                        //     Shop.instance.selectedItem = itemToGive;
+                        //     DialogueManager.instance.itemGiven = true;
+
+                        //     for (int i = 0; i < GameManager.instance.itemsHeld.Length; i++)
+                        //     {
+                        //         if (GameManager.instance.itemsHeld[i] == itemToGive.name)
+                        //         {
+                        //             GameManager.instance.itemsHeld[i] = "";
+                        //             giveItem = false;
+                        //         }
+
+                        //         if (GameManager.instance.equipItemsHeld[i] == itemToGive.name)
+                        //         {
+                        //             GameManager.instance.equipItemsHeld[i] = "";
+                        //             giveItem = false;
+                        //         }
+                        //     }
+                        // }
+                        // //Add gold after conversation
+                        // if (receiveGold)
+                        // {
+                        //     GameMenu.instance.gotItemMessageText.text = "You found " + receiveGold + " Gold!";
+                        //     //StartCoroutine(gotItemMessageCo());
+                        //     GameManager.instance.currentGold += goldAmount;
+                        //     receiveGold = false;
+                        // }
                     }
                 }
             }
@@ -134,26 +163,34 @@ public class DialogueStarter : MonoBehaviour
                             DialogueManager.instance.ActivateEventAtEnd(eventToMark, markEventComplete);
                         }
 
-                        if (giveItem)
-                        {
-                            Shop.instance.selectedItem = itemToGive;
-                            DialogueManager.instance.itemGiven = true;
+                        // if (giveItem)
+                        // {
+                        //     Shop.instance.selectedItem = itemToGive;
+                        //     DialogueManager.instance.itemGiven = true;
 
-                            for (int i = 0; i < GameManager.instance.itemsHeld.Length; i++)
-                            {
-                                if (GameManager.instance.itemsHeld[i] == itemToGive.name)
-                                {
-                                    GameManager.instance.itemsHeld[i] = "";
-                                    giveItem = false;
-                                }
+                        //     for (int i = 0; i < GameManager.instance.itemsHeld.Length; i++)
+                        //     {
+                        //         if (GameManager.instance.itemsHeld[i] == itemToGive.name)
+                        //         {
+                        //             GameManager.instance.itemsHeld[i] = "";
+                        //             giveItem = false;
+                        //         }
 
-                                if (GameManager.instance.equipItemsHeld[i] == itemToGive.name)
-                                {
-                                    GameManager.instance.equipItemsHeld[i] = "";
-                                    giveItem = false;
-                                }
-                            }
-                        }
+                        //         if (GameManager.instance.equipItemsHeld[i] == itemToGive.name)
+                        //         {
+                        //             GameManager.instance.equipItemsHeld[i] = "";
+                        //             giveItem = false;
+                        //         }
+                        //     }
+                        // }
+                        // //Add gold after conversation
+                        // if (receiveGold)
+                        // {
+                        //     GameMenu.instance.gotItemMessageText.text = "You found " + receiveGold + " Gold!";
+                        //     //StartCoroutine(gotItemMessageCo());
+                        //     GameManager.instance.currentGold += goldAmount;
+                        //     receiveGold = false;
+                        // }
                     }
                 }
             }

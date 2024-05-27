@@ -338,6 +338,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 1
   waitTime: 1.4
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: The Prophecy Event Ended
@@ -666,6 +672,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 0
   waitTime: 0
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: Notice the brothers' footsteps
@@ -1497,6 +1509,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 0
   waitTime: 0
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: 
@@ -1974,6 +1992,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 1
   waitTime: 1.4
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: Talked to the Sheriff
@@ -2083,6 +2107,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 0
   waitTime: 0
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: 
@@ -2576,6 +2606,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 0
   waitTime: 0
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: 
@@ -3306,6 +3342,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 0
   waitTime: 0
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: Notice more footsteps
@@ -3488,6 +3530,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 1
   waitTime: 1
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: Town Meeting Ends
@@ -11308,6 +11356,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 0
   waitTime: 0
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: 
@@ -11825,6 +11879,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 0
   waitTime: 0
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: 
@@ -12185,6 +12245,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 0
   waitTime: 0
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: 
@@ -84643,6 +84709,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 1
   waitTime: 2
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: Sable is Chosen for Decorations Duty
@@ -84871,6 +84943,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 0
   waitTime: 0
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: 
@@ -85146,6 +85224,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 1
   waitTime: 1
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: 
   markComplete: 0
   eventToMark: Sheriff Asks Question
@@ -85648,6 +85732,12 @@ MonoBehaviour:
   waitBeforeActivatingDialog: 0
   waitTime: 0
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
   questToMark: '"Talk to Garl"'
   markComplete: 1
   eventToMark: 
