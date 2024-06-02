@@ -49,6 +49,9 @@ public class GameMenu : MonoBehaviour {
     public Button discardEquipItemButton;
     public Button itemUse;
 
+    //Save point
+    public Button saveButton;
+
     [Header("Item Selection")]
     public bool itemConfirmed = false;
     public string selectedItem;
@@ -74,7 +77,7 @@ public class GameMenu : MonoBehaviour {
         if (Input.GetButtonDown("OpenGameMenu") && !menu.activeInHierarchy)
         {
             //Check if game menu can be opened
-            if (ScreenFade.instance.fading == false && !GameManager.instance.battleActive && !GameManager.instance.dialogueActive && !GameManager.instance.cutSceneActive)
+            if (ScreenFade.instance.fading == false && !GameManager.instance.battleActive && !GameManager.instance.dialogueActive && !GameManager.instance.cutSceneActive && !GameManager.instance.saveMenuActive)
             {
                 if (!menu.activeInHierarchy)
                 {
@@ -397,5 +400,28 @@ public class GameMenu : MonoBehaviour {
         public void PlayButtonSound(int buttonSound)
     {
         AudioManager.instance.PlaySFX(buttonSound);
+    }
+
+        public void QuitGame()
+    {
+        CloseMenu();
+
+        //Reset all managers
+        for (int i = 0; i < EventManager.instance.completedEvents.Length; i++)
+        {
+            EventManager.instance.completedEvents[i] = false;
+        }
+
+        // for (int i = 0; i < ChestManager.instance.openedChests.Length; i++)
+        // {
+        //     ChestManager.instance.openedChests[i] = false;
+        // }
+
+        for (int i = 0; i < QuestManager.instance.completedQuests.Length; i++)
+        {
+            QuestManager.instance.completedQuests[i] = false;
+        }
+
+         SceneManager.LoadScene(mainMenuScene);
     }
 }

@@ -73,15 +73,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1299292939
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1373037287, guid: eeb7f6ca2208d574f9294254d4938cbf, type: 3}
+  m_Sprite: {fileID: 1000275721, guid: eeb7f6ca2208d574f9294254d4938cbf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.3125, y: 1.75}
+  m_Size: {x: 1.3125, y: 1.8125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -169,13 +169,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e221d4f92f4ddc947931e3e62bf0ee12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfItemsHeld: 0
   dialogue: {fileID: 11400000, guid: 36dc93e5550a3e146b05f5abac217c4c, type: 2}
+  itemQuestCompletedDialogue: {fileID: 0}
   activateOnAwake: 0
   activateOnButtonPress: 1
   activateOnEnter: 0
   waitBeforeActivatingDialog: 0
   waitTime: 0
   displayName: 1
+  receiveItem: 0
+  itemToReceive: {fileID: 0}
+  giveItem: 0
+  itemToGive: {fileID: 0}
+  receiveGold: 0
+  goldAmount: 0
+  questToMark: 
+  markComplete: 0
+  requiresItemToComplete: 0
+  itemToCheck: {fileID: 0}
+  gotItem: 0
+  requiresItemReceivedToComplete: 0
+  eventToMark: 
+  markEventComplete: 0
   onCanActivate:
     m_PersistentCalls:
       m_Calls: []

@@ -563,6 +563,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: NPCSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 33
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b372eb6c44b7cef41852cbbbbbdacb8d
+      internalID: -2104280227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -588,6 +609,7 @@ TextureImporter:
       NPCSpriteSheet_19: 1654213805
       NPCSpriteSheet_2: -670616549
       NPCSpriteSheet_20: -2071044311
+      NPCSpriteSheet_21: -2104280227
       NPCSpriteSheet_3: 503032664
       NPCSpriteSheet_4: 928906449
       NPCSpriteSheet_5: 1809189438

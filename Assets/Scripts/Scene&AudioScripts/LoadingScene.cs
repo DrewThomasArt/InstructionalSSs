@@ -16,10 +16,10 @@ public class LoadingScene : MonoBehaviour {
             {
                 SceneManager.LoadScene(PlayerPrefs.GetString("Current_Scene"));
 
-                // GameManager.instance.LoadData();
-                // QuestManager.instance.LoadQuestData();
-                // ChestManager.instance.LoadChestData();
-                // EventManager.instance.LoadEventData();
+                GameManager.instance.LoadData();
+                QuestManager.instance.LoadQuestData();
+                //ChestManager.instance.LoadChestData();
+                EventManager.instance.LoadEventData();
             }
         }
 	}

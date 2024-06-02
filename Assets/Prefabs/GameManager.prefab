@@ -50,6 +50,7 @@ MonoBehaviour:
   gameMenuOpen: 0
   dialogueActive: 0
   battleActive: 0
+  saveMenuActive: 0
   fadingBetweenAreas: 0
   eventLockActive: 0
   cutSceneMusicActive: 0
@@ -60,6 +61,7 @@ MonoBehaviour:
   - {fileID: 6744668508428889374, guid: d5b1fb977d4ab2349a677d6710b8cade, type: 3}
   - {fileID: 6744668508428889374, guid: a0278a6f1f2a3304fa013483176393ad, type: 3}
   - {fileID: 6744668508428889374, guid: bf1f4bcec9a2a9e46bbd6df0ecb5da91, type: 3}
+  - {fileID: 6744668508428889374, guid: c49c58227fcaeaa4ba5688dc6eb8528b, type: 3}
   itemsInInventory:
   - {fileID: 6744668508428889374, guid: d5b1fb977d4ab2349a677d6710b8cade, type: 3}
   - {fileID: 6744668508428889374, guid: a0278a6f1f2a3304fa013483176393ad, type: 3}
@@ -77,7 +79,19 @@ MonoBehaviour:
   - 
   - 
   - 
-  equipmentInInventory: []
+  equipmentInInventory:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   equipItemsHeld:
   - 
   - 
@@ -139,4 +153,7 @@ MonoBehaviour:
   - '"Talk to Garl"'
   - '"Found the Lost Brothers"'
   - '"The Lost Brothers"'
+  - '"Get Flowers From EagleEye"'
+  - '"Return Flowers to Garl"'
+  - '"Received Coins from Elder Maiah"'
   completedQuests: 

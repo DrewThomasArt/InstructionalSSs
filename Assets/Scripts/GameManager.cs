@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public bool gameMenuOpen;
     public bool dialogueActive;
     public bool battleActive;
+    public bool saveMenuActive;
     public bool fadingBetweenAreas;
     public bool eventLockActive;
     public bool cutSceneMusicActive;
@@ -69,14 +70,13 @@ public class GameManager : MonoBehaviour
                 equipItemsHeld[i] = "";
             }
         }
-
          SortItems();
     }
 
     // Update is called once per frame
     void Update()
     {
-         //Check if any meu is currently open and prevent the player from moving
+         //Check if any menu is currently open and prevent the player from moving
         if (gameMenuOpen || dialogueActive || fadingBetweenAreas || eventLockActive)
         {
             PlayerController.instance.canMove = false;
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         } 
     }
 
-        //Returns the details of a list of items
+    //Returns the details of a list of items
     public Item GetItemDetails(string itemToGrab)
     {
 
@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour
         {
             for (int i = 0; i < itemsHeld.Length; i++)
             {
-                if (itemsHeld[i] == "" )//|| itemsHeld[i] == itemToAdd)
+                if (itemsHeld[i] == "" )
                 {
                     newItemPosition = i;
                     i = itemsHeld.Length;
@@ -204,7 +204,7 @@ public class GameManager : MonoBehaviour
         
             for (int i = 0; i < equipItemsHeld.Length; i++)
             {
-                if (equipItemsHeld[i] == "")// || equipItemsHeld[i] == itemToAdd)
+                if (equipItemsHeld[i] == "")
                 {
                     newItemPosition = i;
                     i = equipItemsHeld.Length;
@@ -246,7 +246,7 @@ public class GameManager : MonoBehaviour
         
             for (int i = 0; i < itemsHeld.Length; i++)
             {
-                if (itemsHeld[i] == "")// || itemsHeld[i] == itemToAdd)
+                if (itemsHeld[i] == "")
                 {
                     newItemPosition = i;
                     i = itemsHeld.Length;
@@ -395,5 +395,44 @@ public class GameManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    //A system to save player status data and inventory
+    public void SaveData()
+    {
+        //Saves current scene + player position
+        PlayerPrefs.SetString("Current_Scene", SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetFloat("Player_Position_x", PlayerController.instance.transform.position.x);
+        PlayerPrefs.SetFloat("Player_Position_y", PlayerController.instance.transform.position.y);
+        PlayerPrefs.SetFloat("Player_Position_z", PlayerController.instance.transform.position.z);
+
+        //Saves inventory
+        for(int i = 0; i < itemsHeld.Length; i++)
+        {
+            PlayerPrefs.SetString("ItemInInventory_" + i, itemsHeld[i]);
+            PlayerPrefs.SetString("EquipItemInInventory_" + i, equipItemsHeld[i]);
+            //PlayerPrefs.SetInt("ItemAmount_" + i, numberOfItems[i]);
+        }
+
+        //Saves gold
+        PlayerPrefs.SetInt("Gold", currentGold);
+    }
+
+    //A system to load saved data
+    public void LoadData()
+    {
+        //Load player position
+        PlayerController.instance.transform.position = new Vector3(PlayerPrefs.GetFloat("Player_Position_x"), PlayerPrefs.GetFloat("Player_Position_y"), PlayerPrefs.GetFloat("Player_Position_z"));
+
+        //Load inventory
+        for(int i = 0; i < itemsHeld.Length; i++)
+        {
+            itemsHeld[i] = PlayerPrefs.GetString("ItemInInventory_" + i);
+            equipItemsHeld[i] = PlayerPrefs.GetString("EquipItemInInventory_" + i);
+            //numberOfItems[i] = PlayerPrefs.GetInt("ItemAmount_" + i);
+        }
+
+        //Load gold
+        currentGold = PlayerPrefs.GetInt("Gold");
     }
 }

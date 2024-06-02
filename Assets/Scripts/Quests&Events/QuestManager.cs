@@ -117,7 +117,6 @@ public class QuestManager : MonoBehaviour {
         GameMenu.instance.gotItemMessage.SetActive(true);
         yield return new WaitForSeconds(2.5f);
         GameMenu.instance.gotItemMessage.SetActive(false);
-
     }
 }
 

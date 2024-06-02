@@ -20,6 +20,10 @@ public class EventObjectActivator : MonoBehaviour
 
     public UnityEvent onActivate;
 
+    void Awake(){
+        CheckCompletion();
+    }
+
     // Update is called once per frame
     void LateUpdate()
     {

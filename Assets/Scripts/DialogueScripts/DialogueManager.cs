@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour
     public int currentLine;
     public bool justStarted;
     public bool fullInventory;
-    public bool itemRecieved;
+    public bool itemReceived;
     public bool itemGiven;
     public GameObject dialogueObject;
     [HideInInspector]
@@ -70,11 +70,11 @@ public class DialogueManager : MonoBehaviour
                         {
                         dialogueBox.SetActive(false);
 
-                        if (itemRecieved && !fullInventory)
+                        if (itemReceived && !fullInventory)
                             {
                                 GameMenu.instance.gotItemMessageText.text = "You found a " + Shop.instance.selectedItem.name + "!";
                                 StartCoroutine(gotItemMessageCo());
-                                itemRecieved = false;
+                                itemReceived = false;
                             }
 
                         if (itemGiven)
@@ -162,11 +162,11 @@ public void ShowDialogue(Sprite[] portraits, string[] newLines, bool displayName
 
             if (newLines.Length == 0)
         {
-            if (itemRecieved && !fullInventory)
+            if (itemReceived && !fullInventory)
             {
                 GameMenu.instance.gotItemMessageText.text = "You found a " + Shop.instance.selectedItem.name + "!";
                 StartCoroutine(gotItemMessageCo());
-                itemRecieved = false;
+                itemReceived = false;
             }
 
             if (itemGiven)
@@ -238,11 +238,11 @@ public void ShowDialogue(Sprite[] portraits, string[] newLines, bool displayName
 
             if (newLines.Length == 0)
         {
-            if (itemRecieved && !fullInventory)
+            if (itemReceived && !fullInventory)
             {
                 GameMenu.instance.gotItemMessageText.text = "You found a " + Shop.instance.selectedItem.name + "!";
                 StartCoroutine(gotItemMessageCo());
-                itemRecieved = false;
+                itemReceived = false;
             }
 
             if (itemGiven)

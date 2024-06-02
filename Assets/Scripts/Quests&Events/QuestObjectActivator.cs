@@ -19,10 +19,9 @@ public class QuestObjectActivator : MonoBehaviour {
 
     public UnityEvent onActivate;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    void Awake(){
+        CheckCompletion();
+    }
 	
 	// Update is called once per frame
 	void Update () {

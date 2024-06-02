@@ -88,7 +88,6 @@ public class TitleScreen : MonoBehaviour {
     {
         ScreenFade.instance.fadeScreenObject.SetActive(true);
         PlayerController.instance.canMove = true;
-        GameManager.instance.cutSceneActive = true;
         SceneManager.LoadScene(newGameScene);
     }
 
